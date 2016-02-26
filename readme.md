@@ -15,8 +15,8 @@
 5. "cd" into the Homestead folder and run ```bash init.sh```
 6. Run ```sudo nano ~/.homestead/Homestead.yaml```
 7. Set the "folder - map:" to the folder where you store all of your code or Laravel projects.
-7. Set the "sites - map:" to the domain you want to test it on localy. I set mine to dev.app because it is short.
-8. Set the "site - to:" to the folder containing this Laravel app.
+8. Set the "sites - map:" to the domain you want to test it on localy. I set mine to dev.app because it is short.
+9. Set the "site - to:" to the folder containing this Laravel app.
 
 Example:
 ```
@@ -29,9 +29,10 @@ Example:
     - map: dev.app
       to: /home/vagrant/Code/Laravel/reporank/public
 ```
-9. Run ```sudo nano /etc/hosts```
-10. Set ```192.168.10.10  dev.app``` in the hosts file
-11. Run the ```vagrant up command``` from your Homestead directory
+
+10. Run ```sudo nano /etc/hosts```
+11. Set ```192.168.10.10  dev.app``` in the hosts file
+12. Run the ```vagrant up command``` from your Homestead directory
 
 IF you get an error like: No such file or directory @ rb_sysopen - /Users/name/.ssh/id_rsa (Errno::ENOENT)
 Run the following
