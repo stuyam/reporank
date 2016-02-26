@@ -5,7 +5,9 @@
 
 ##Setup
 ###Install Homestead
+
 -Consult https://laravel.com/docs/5.2/homestead for help
+
 1. Install Virtual Box https://www.virtualbox.org/wiki/Downloads
 2. Install Vagrant https://www.vagrantup.com/downloads.html
 3. Run the command ```vagrant box add laravel/homestead``` Enter Option "1" when asked in the setup.
