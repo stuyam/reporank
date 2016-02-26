@@ -33,6 +33,7 @@ Example:
 10. Run ```sudo nano /etc/hosts```
 11. Set ```192.168.10.10  dev.app``` in the hosts file
 12. Run the ```vagrant up command``` from your Homestead directory
+12. Go to http://dev.app or what you set in your hosts
 
 IF you get an error like: No such file or directory @ rb_sysopen - /Users/name/.ssh/id_rsa (Errno::ENOENT)
 Run the following
