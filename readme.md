@@ -21,16 +21,12 @@
 Example:
 ```
   folders:
-
     - map: ~/Documents/Code
-
       to: /home/vagrant/Code
 ```
 ```
   sites:
-
     - map: dev.app
-
       to: /home/vagrant/Code/Laravel/reporank/public
 ```
 9. Run ```sudo nano /etc/hosts```
