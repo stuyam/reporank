@@ -19,19 +19,20 @@
 8. Set the "site - to:" to the folder containing this Laravel app.
 
 Example:
-
+```
   folders:
 
     - map: ~/Documents/Code
 
       to: /home/vagrant/Code
-
+```
+```
   sites:
 
     - map: dev.app
 
       to: /home/vagrant/Code/Laravel/reporank/public
-
+```
 9. Run ```sudo nano /etc/hosts```
 10. Set ```192.168.10.10  dev.app``` in the hosts file
 11. Run the ```vagrant up command``` from your Homestead directory
