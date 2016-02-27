@@ -27,5 +27,5 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+    Route::get('{username}/{name}', 'RepoController@create');
 });
