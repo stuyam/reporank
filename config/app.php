@@ -156,6 +156,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * Stuart's Added Providers...
+         */
+        GrahamCampbell\GitHub\GitHubServiceProvider::class,
+
     ],
 
     /*
