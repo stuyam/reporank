@@ -27,5 +27,6 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    Route::get('{username}/{name}', 'RepoController@create');
+    Route::get('{username}/{name}/language.svg', 'RepoController@rankLanguage');
+    Route::get('{username}/{name}.svg', 'RepoController@rank');
 });

@@ -4,9 +4,71 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "167c22e8e27f09d8e44be77ffd3898b9",
-    "content-hash": "25ad07ca820993847c1b9d3f4b073f6d",
+    "hash": "966cb502ce7318d18c9a8b7415a7afc7",
+    "content-hash": "2808223e4aabfdee94cbb9a75c2e125d",
     "packages": [
+        {
+            "name": "alt-three/badger",
+            "version": "v3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AltThree/Badger.git",
+                "reference": "a39c10501443dc7a1197a7a75884ebdd5aeb2691"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AltThree/Badger/zipball/a39c10501443dc7a1197a7a75884ebdd5aeb2691",
+                "reference": "a39c10501443dc7a1197a7a75884ebdd5aeb2691",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "5.1.*|5.2.*",
+                "illuminate/support": "5.1.*|5.2.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "^3.1",
+                "phpunit/phpunit": "^4.8|^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AltThree\\Badger\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "James Brooks",
+                    "email": "james@alt-three.com"
+                },
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@alt-three.com"
+                },
+                {
+                    "name": "Joseph Cohen",
+                    "email": "joe@alt-three.com"
+                }
+            ],
+            "description": "A Badge Generator For Laravel 5",
+            "keywords": [
+                "Alt Three",
+                "badge",
+                "badger",
+                "shield",
+                "svg"
+            ],
+            "time": "2016-02-20 16:48:04"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "3.0.0",
@@ -584,16 +646,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.2.21",
+            "version": "v5.2.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "4df24638165650a833e072851cad39606da89faf"
+                "reference": "aec1b7cb9ec0bac0107361a3730cac9b6f945ef4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/4df24638165650a833e072851cad39606da89faf",
-                "reference": "4df24638165650a833e072851cad39606da89faf",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/aec1b7cb9ec0bac0107361a3730cac9b6f945ef4",
+                "reference": "aec1b7cb9ec0bac0107361a3730cac9b6f945ef4",
                 "shasum": ""
             },
             "require": {
@@ -708,7 +770,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-02-24 15:13:36"
+            "time": "2016-02-27 22:09:19"
         },
         {
             "name": "league/flysystem",
@@ -1100,16 +1162,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.7.0",
+            "version": "v0.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "1573b36948a32bdaf43db525edf5e95d5a08ed06"
+                "reference": "5e8cedbe0a3681f18782594eefc78423f8401fc8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/1573b36948a32bdaf43db525edf5e95d5a08ed06",
-                "reference": "1573b36948a32bdaf43db525edf5e95d5a08ed06",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/5e8cedbe0a3681f18782594eefc78423f8401fc8",
+                "reference": "5e8cedbe0a3681f18782594eefc78423f8401fc8",
                 "shasum": ""
             },
             "require": {
@@ -1138,7 +1200,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-develop": "0.7.x-dev"
+                    "dev-develop": "0.8.x-dev"
                 }
             },
             "autoload": {
@@ -1168,7 +1230,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2016-02-20 16:27:05"
+            "time": "2016-02-27 18:59:18"
         },
         {
             "name": "swiftmailer/swiftmailer",

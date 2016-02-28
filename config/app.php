@@ -160,6 +160,7 @@ return [
          * Stuart's Added Providers...
          */
         GrahamCampbell\GitHub\GitHubServiceProvider::class,
+        AltThree\Badger\BadgerServiceProvider::class
 
     ],
 
@@ -209,6 +210,7 @@ return [
 
         // Stuart's Added Providers
         'GitHub'    => GrahamCampbell\GitHub\Facades\GitHub::class,
+        'Badger'    => AltThree\Badger\Facades\Badger::class,
 
     ],
 
