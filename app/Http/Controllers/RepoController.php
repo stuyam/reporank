@@ -24,8 +24,6 @@ class RepoController extends Controller
   }
 
   private function handle($username, $name, $languageRank, $github, $repo, $badge){
-    //set headers to NOT cache a page
-    header("Cache-Control: no-cache, must-revalidate"); //HTTP 1.1
     $repo = $repo->where('username', $username)->where('name', $name)->first();
     // if the repo exists in the DB
     if($repo){
@@ -75,9 +73,9 @@ class RepoController extends Controller
 
   private function returnSVG($repo, $languageRank){
     if($languageRank){
-      return $repo->badge_language;
+      return \Response::make($repo->badge_language)->header('Content-Type', 'image/svg+xml');
     } else {
-      return $repo->badge;
+      return \Response::make($repo->badge)->header('Content-Type', 'image/svg+xml');
     }
   }
 
