@@ -1,7 +1,8 @@
 # Repo Rank
 ### GitHub respository rank badge
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
+[![Build Status](http://dev.app/yamartino/pressure.svg)](https://travis-ci.org/laravel/framework)
+[![Build Status](http://dev.app/yamartino/pressure/language.svg)](https://travis-ci.org/laravel/framework)
 
 ##Setup
 ###Install Homestead
