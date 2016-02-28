@@ -24,6 +24,8 @@ class RepoController extends Controller
   }
 
   private function handle($username, $name, $languageRank, $github, $repo, $badge){
+    //set headers to NOT cache a page
+    header("Cache-Control: no-cache, must-revalidate"); //HTTP 1.1
     $repo = $repo->where('username', $username)->where('name', $name)->first();
     // if the repo exists in the DB
     if($repo){
