@@ -1,17 +1,17 @@
 <?php
 
-namespace App\GitHub;
+namespace App\RepoRank;
 
-use GrahamCampbell\GitHub\Facades\GitHub;
+use \GitHub;
 
 class GitHub
 {
-    public function getRepo($username, $name){
+    public function repo($username, $name){
       // TODO: check for failure and return false if it doesn't work
-      $repo = GitHub::repo()->show($request->username, $request->name);
+      return GitHub::repo()->show($username, $name);
     }
 
-    public function rank($stars, $forks){
+    public function rank($repo){
       return GitHub::api('search')->repositories("stars:>=$repo[stargazers_count] forks:>=$repo[forks]")['total_count'];
     }
 }

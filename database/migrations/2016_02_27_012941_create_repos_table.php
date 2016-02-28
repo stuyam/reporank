@@ -21,6 +21,9 @@ class CreateReposTable extends Migration
             $table->integer('forks');
             $table->string('language');
             $table->timestamps();
+
+            // set primary composite key
+            $table->unique(['name', 'username']);
         });
     }
 

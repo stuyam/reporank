@@ -6,30 +6,53 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\GitHub;
-use App\Models;
+use App\RepoRank\GitHub;
+use App\RepoRank\Repo;
 
 class RepoController extends Controller
 {
-    public function create(Request $request, GitHub $github){
-      // get the repo using the info from the url
-      $repo = $github->getRepo($request->username, $request->name);
+    public function create(Request $request, GitHub $github, Repo $repo){
+      $username = $request->username;
+      $name     = $request->name;
 
-      dd($repo);
-      // search for the
-      // dd(GitHub::api('search')->repositories("stars:>=$repo[stargazers_count] forks:>=$repo[forks]"));
+      $repo = $repo->where('username', $username)->where('name', $name)->first();
 
-      // $repo = new Repo;
-      // $repo->username = $request->name;
-      // $repo->name = $request->repo;
-      // $repo->stars = $gitHubRepo->stargazers_count;
-      // $repo->forks = $gitHubRepo->forks;
-      // $repo->language = $gitHubRepo->language;
-      // $repo->save();
+      // if the repo exists in the DB
+      if($repo){
 
-    }
+        if($repo->updated_at->timestamp > (time() - 60*60*24) ){
+          // return cached image
+          return $repo->rank.'cached';
+        } else {
+          // get updated info
+          $gitRepo = $github->repo($username, $name);
+          $rank = $github->rank($gitRepo);
 
-    private function getRepo(){
+          $repo->rank  = $rank;
+          $repo->stars = $gitRepo['stargazers_count'];
+          $repo->forks = $gitRepo['forks'];
+          $repo->touch();
+          $repo->save();
 
+          return $rank.'updated';
+        }
+
+      } else {
+        // make new record
+        $gitRepo = $github->repo($request->username, $request->name);
+        $rank = $github->rank($gitRepo);
+
+        // save the info to the db
+        $repo           = new Repo;
+        $repo->rank     = $rank;
+        $repo->username = $request->username;
+        $repo->name     = $request->name;
+        $repo->stars    = $gitRepo['stargazers_count'];
+        $repo->forks    = $gitRepo['forks'];
+        $repo->language = $gitRepo['language'];
+        $repo->save();
+
+        return $rank.'new';
+      }
     }
 }
