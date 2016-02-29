@@ -27,6 +27,9 @@ class RepoController extends Controller
       } else {
         // get updated info
         $gitRepo = $github->repo($username, $name);
+        if( !$gitRepo ){
+          return $this->failSVG($badge);
+        }
         $rank = $github->rank($gitRepo);
 
         $repo->rank           = $rank;
@@ -41,6 +44,9 @@ class RepoController extends Controller
     } else {
       // make new record
       $gitRepo = $github->repo($username, $name);
+      if( !$gitRepo ){
+        return $this->failSVG($badge);
+      }
       $rank = $github->rank($gitRepo);
 
       // save the info to the db
@@ -57,11 +63,11 @@ class RepoController extends Controller
   }
 
   private function returnSVG($repo){
-    if($languageRank){
-      return \Response::make($repo->badge_language)->header('Content-Type', 'image/svg+xml');
-    } else {
-      return \Response::make($repo->badge)->header('Content-Type', 'image/svg+xml');
-    }
+    return \Response::make($repo->badge)->header('Content-Type', 'image/svg+xml');
+  }
+
+  private function failSVG($badge){
+    return \Response::make($badge->fail())->header('Content-Type', 'image/svg+xml');
   }
 
 }
