@@ -10,8 +10,8 @@ class Badge
       return Badger::generate("GitHub Rank", $this->numberReadable($rank), '#4c1', 'flat');
     }
 
-    public function rankLanguage($rank, $language){
-      return Badger::generate("GitHub $language Rank", $this->numberReadable($rank), '#4c1', 'flat');
+    public function fail(){
+      return Badger::generate("Repo Not Found", "404", '#4c1', 'flat');
     }
 
     private function numberReadable($rank){
