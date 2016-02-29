@@ -8,11 +8,11 @@ class GitHub
 {
     public function repo($username, $name){
       // check for failure and return false if it doesn't work
-      $repo = GitHub::repo()->show($username, $name);
-      if( isset($repo) ){
-        return false;
-      } else {
+      try {
+        $repo = GitHub::repo()->show($username, $name);
         return $repo;
+      } catch (Github\Exception\RuntimeException $e) {
+        return false;
       }
     }
 
