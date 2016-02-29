@@ -12,10 +12,6 @@ class GitHub
     }
 
     public function rank($repo){
-      return GitHub::api('search')->repositories("stars:>=$repo[stargazers_count] forks:>=$repo[forks]")['total_count'];
-    }
-
-    public function rankLanguage($repo){
-      return GitHub::api('search')->repositories("stars:>=$repo[stargazers_count] forks:>=$repo[forks] language:$repo[language]")['total_count'];
+      return GitHub::api('search')->repositories("stars:>=$repo[stargazers_count]")['total_count'];
     }
 }

@@ -17,12 +17,8 @@ class CreateReposTable extends Migration
             $table->string('name');
             $table->string('username');
             $table->integer('rank');
-            $table->integer('rank_language');
             $table->integer('stars');
-            $table->integer('forks');
-            $table->string('language');
             $table->text('badge');
-            $table->text('badge_language');
             $table->timestamps();
 
             // set primary composite key

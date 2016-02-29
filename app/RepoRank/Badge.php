@@ -10,10 +10,6 @@ class Badge
       return Badger::generate("GitHub Rank", $this->numberReadable($rank), '#4c1', 'flat');
     }
 
-    public function rankLanguage($rank, $language){
-      return Badger::generate("GitHub $language Rank", $this->numberReadable($rank), '#4c1', 'flat');
-    }
-
     private function numberReadable($rank){
       return number_format($rank).$this->ordinal_suffix($rank);
     }
