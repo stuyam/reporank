@@ -1,7 +1,7 @@
 # Repo Rank
 ### GitHub respository rank badge
 
-[![GitHub Rank](http://reporank.com/yamartino/pressure.svg)](http://reporank.com)
+[![GitHub Rank](http://reporank.com/yamartino/reporank)](http://reporank.com)
 
 ##Setup
 ###Install Homestead
