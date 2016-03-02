@@ -73,11 +73,15 @@ class RepoController extends Controller
   }
 
   private function returnSVG($repo){
-    return \Response::make($repo->badge)->header('Content-Type', 'image/svg+xml');
+    return $this->respondConstruct($repo->badge);
   }
 
   private function failSVG($badge){
-    return \Response::make($badge->fail())->header('Content-Type', 'image/svg+xml');
+    return $this->respondConstruct($badge->fail());
+  }
+
+  private function respondConstruct($badge){
+    return \Response::make($badge)->header('Content-Type', 'image/svg+xml')->header('Cache-Control', 'private')->header('Etag', md5($badge));
   }
 
 }
