@@ -26,10 +26,10 @@ class RepoController extends Controller
         return $this->returnSVG($repo);
       }
       // if there are other repos with the same number of stars updated in the last 24 hours, use their rank
-      else if($cachedRepo = $repoDB->where('stars', $repo->stars)->where('updated_at', '>=', (time() - 60*60*24))->orderBy('updated_at', 'DESC')->first()) {
-        $this->updateRepo($repo, $cachedRepo->rank, $cachedRepo->stars, $cachedRepo->badge);
-        return $this->returnSVG($repo);
-      }
+      // else if($cachedRepo = $repoDB->where('stars', $repo->stars)->where('updated_at', '>=', (time() - 60*60*24))->orderBy('updated_at', 'DESC')->first()) {
+      //   $this->updateRepo($repo, $cachedRepo->rank, $cachedRepo->stars, $cachedRepo->badge);
+      //   return $this->returnSVG($repo);
+      // }
       // get the updated repo info from github and update the database
       else {
         $gitRepo = $github->repo($username, $name);
