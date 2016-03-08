@@ -32,11 +32,20 @@ Example:
 
 10. Run ```sudo nano /etc/hosts```
 11. Set ```192.168.10.10  dev.app``` in the hosts file
-12. Run the ```vagrant up command``` from your Homestead directory
-12. Go to http://dev.app or what you set in your hosts
+12. Run the ```vagrant up``` command from your Homestead directory
+13. Run the ```vagrant ssh``` command also from the Homestead directory to boot into the virtual server
+14. Now that you are in the serve, ```ls``` in the directory to see what folder you are in.
+15. Then ```cd``` into the folder that has repo rank in it.
+16. Run ```php artisan migrate``` to run the database migrations to setup the mysql database.
+17. Go to http://dev.app or what you set in your hosts, in your browser to see the page!
 
 IF you get an error like: No such file or directory @ rb_sysopen - /Users/name/.ssh/id_rsa (Errno::ENOENT)
 Run the following
-1)```cd ~ ; mkdir .ssh ; cd .ssh```
-2)```ssh-keygen -b 1024 -t rsa -f id_rsa -P ""```
-Then try running ```vagrant up``` again
+1. ```cd ~ ; mkdir .ssh ; cd .ssh```
+2. ```ssh-keygen -b 1024 -t rsa -f id_rsa -P ""```
+Then try running ```vagrant up``` again in the Homestead directory
+
+###Edit the home page
+You can edit and change the home page by editing the file in reporank/resources/views/welcome.blade.php
+
+Any assets you need to host like a js file or css file you can put in the reporank/public folder and they will be served as public static files.
