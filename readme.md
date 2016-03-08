@@ -40,9 +40,11 @@ Example:
 17. Go to http://dev.app or what you set in your hosts, in your browser to see the page!
 
 IF you get an error like: No such file or directory @ rb_sysopen - /Users/name/.ssh/id_rsa (Errno::ENOENT)
-Run the following
+Run the following:
+
 1. ```cd ~ ; mkdir .ssh ; cd .ssh```
 2. ```ssh-keygen -b 1024 -t rsa -f id_rsa -P ""```
+
 Then try running ```vagrant up``` again in the Homestead directory
 
 ###Edit the home page
