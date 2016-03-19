@@ -6,12 +6,12 @@ use \Badger;
 
 class Badge
 {
-    public function rank($rank){
-      return Badger::generate("GitHub Rank", $this->numberReadable($rank), '#4c1', 'flat');
+    public function rank($rank, $style){
+      return Badger::generate("GitHub Rank", $this->numberReadable($rank), '#4c1', $style);
     }
 
-    public function fail(){
-      return Badger::generate("Repo Not Found", "404", '#4c1', 'flat');
+    public function fail($style){
+      return Badger::generate("Repo Not Found", "404", '#4c1', $style);
     }
 
     private function numberReadable($rank){
