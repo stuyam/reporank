@@ -7,11 +7,25 @@ use \Badger;
 class Badge
 {
     public function rank($rank, $style){
-      return Badger::generate("GitHub Rank", $this->numberReadable($rank), '#4c1', $style);
+      return Badger::generate("GitHub Rank", $this->numberReadable($rank), '#4c1', $this->badgeStyle($style));
     }
 
     public function fail($style){
-      return Badger::generate("Repo Not Found", "404", '#4c1', $style);
+      return Badger::generate("Repo Not Found", "404", '#4c1', $this->badgeStyle($style));
+    }
+
+    private function badgeStyle($style){
+      switch ($style) {
+        case 'square':
+          return 'flat-square';
+        case 'plastic':
+          return 'plastic';
+        case 'social':
+          return 'social';
+        case 'default':
+        default:
+          return 'flat';
+      }
     }
 
     private function numberReadable($rank){

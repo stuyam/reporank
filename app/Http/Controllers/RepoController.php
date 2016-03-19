@@ -14,15 +14,15 @@ class RepoController extends Controller
   public function rank(Request $request, GitHub $github, Repo $repoDB, Badge $badge){
     $username = $request->username;
     $name     = $request->name;
-    $style    = $this->getStyle($request->input('style', 'default'));
+    $style    = $this->normalizeStyle($request->input('style', 'default'));
     // $force    = $request->input('force', false);
 
-    $repo = $repoDB->where('username', $username)->where('name', $name)->where('style', $style)->first();
+    $repo = $repoDB->where('username', $username)->where('name', $name)->first();
     // if the repo exists in the database
     if($repo){
       // if the repo was updated in the last 24 hours, use that info
       if($repo->updated_at->timestamp > (time() - 60*60*24)){
-        return $this->returnSVG($repo);
+        return $this->returnSVG($repo, $style);
       }
       // get the updated repo info from github and update the database
       else {
@@ -32,9 +32,9 @@ class RepoController extends Controller
         }
         $rank = $github->rank($gitRepo);
 
-        $this->updateRepo($repo, $rank, $gitRepo['stargazers_count'], $badge->rank($rank, $style));
+        $this->updateRepo($repo, $rank, $gitRepo['stargazers_count'], $badge);
 
-        return $this->returnSVG($repo);
+        return $this->returnSVG($repo, $style);
       }
 
     } else {
@@ -50,40 +50,42 @@ class RepoController extends Controller
       $repo->rank           = $rank;
       $repo->username       = $username;
       $repo->name           = $name;
-      $repo->style          = $style;
       $repo->stars          = $gitRepo['stargazers_count'];
-      $repo->badge          = $badge->rank($rank, $style);
+      $repo->default_badge  = $badge->rank($rank, 'default');
+      $repo->square_badge   = $badge->rank($rank, 'square');
+      $repo->plastic_badge  = $badge->rank($rank, 'plastic');
+      $repo->social_badge   = $badge->rank($rank, 'social');
       $repo->save();
 
-      return $this->returnSVG($repo);
+      return $this->returnSVG($repo, $style);
     }
   }
 
   private function updateRepo($repo, $rank, $stars, $badge){
-    $repo->rank  = $rank;
-    $repo->stars = $stars;
-    $repo->badge = $badge;
+    $repo->rank          = $rank;
+    $repo->stars         = $stars;
+    $repo->default_badge = $badge->rank($rank, 'default');
+    $repo->square_badge  = $badge->rank($rank, 'square');
+    $repo->plastic_badge = $badge->rank($rank, 'plastic');
+    $repo->social_badge  = $badge->rank($rank, 'social');
     $repo->touch();
     $repo->save();
   }
 
-  private function getStyle($style){
+  private function normalizeStyle($style){
     switch ($style) {
-      case 'default':
-        return'flat';
       case 'square':
-        return 'flat-square';
       case 'plastic':
-        return 'plastic';
       case 'social':
-        return 'social';
+      case 'default':
+        return $style;
       default:
-        return 'flat';
+        return 'default';
     }
   }
 
-  private function returnSVG($repo){
-    return $this->respondConstruct($repo->badge);
+  private function returnSVG($repo, $style){
+    return $this->respondConstruct($repo->{$style."_badge"});
   }
 
   private function failSVG($badge, $style){

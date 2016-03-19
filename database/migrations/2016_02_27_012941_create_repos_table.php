@@ -16,14 +16,16 @@ class CreateReposTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('username');
-            $table->string('style');
             $table->integer('rank');
             $table->integer('stars');
-            $table->text('badge');
+            $table->text('default_badge');
+            $table->text('square_badge');
+            $table->text('plastic_badge');
+            $table->text('social_badge');
             $table->timestamps();
 
             // set primary composite key
-            $table->unique(['name', 'username', 'style']);
+            $table->unique(['name', 'username']);
         });
     }
 
