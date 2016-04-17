@@ -26,19 +26,19 @@
             @if(strlen($username) > 0 && strlen($repository) > 0)
                 <div class="examples">
                     <div>
-                        <img src="http://localhost:3000/{{$username}}/{{$repository}}">
+                        <img src="https://reporank.com/{{$username}}/{{$repository}}">
                         <textarea class="form-control" rows="4">[![GitHub Rank](https://reporank.com/{{$username}}/{{$repository}})](https://reporank.com?u={{$username}}&r={{$repository}})</textarea>
                     </div>
                     <div>
-                        <img src="http://localhost:3000/{{$username}}/{{$repository}}?style=square">
+                        <img src="https://reporank.com/{{$username}}/{{$repository}}?style=square">
                         <textarea class="form-control" rows="4">[![GitHub Rank](https://reporank.com/{{$username}}/{{$repository}}?style=square)](https://reporank.com?u={{$username}}&r={{$repository}})</textarea>
                     </div>
                     <div>
-                        <img src="http://localhost:3000/{{$username}}/{{$repository}}?style=plastic">
+                        <img src="https://reporank.com/{{$username}}/{{$repository}}?style=plastic">
                         <textarea class="form-control" rows="4">[![GitHub Rank](https://reporank.com/{{$username}}/{{$repository}}?style=plastic)](https://reporank.com?u={{$username}}&r={{$repository}})</textarea>
                     </div>
                     <div>
-                        <img src="http://localhost:3000/{{$username}}/{{$repository}}?style=social">
+                        <img src="https://reporank.com/{{$username}}/{{$repository}}?style=social">
                         <textarea class="form-control" rows="4">[![GitHub Rank](https://reporank.com/{{$username}}/{{$repository}}?style=social)](https://reporank.com?u={{$username}}&r={{$repository}})</textarea>
                     </div>
                 </div>
