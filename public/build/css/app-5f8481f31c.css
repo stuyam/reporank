@@ -5769,23 +5769,50 @@ h1 {
   border-radius: 0; }
 
 form {
+  background: white;
   padding: 20px;
-  display: -ms-flexbox;
+  box-align: stretch;
+  -webkit-align-items: stretch;
+  -moz-align-items: stretch;
+  -ms-align-items: stretch;
+  -o-align-items: stretch;
+  align-items: stretch;
+  -ms-flex-align: stretch;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
   display: -webkit-flex;
-  display: flex; }
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-orient: horizontal;
+  box-direction: normal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  box-pack: start;
+  -webkit-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  -o-justify-content: flex-start;
+  justify-content: flex-start;
+  -ms-flex-pack: start; }
   form div {
-    -webkit-flex: 2 200px;
-    -ms-flex: 2 200px;
-    flex: 2 200px;
-    -ms-flex-order: 2;
-    -webkit-order: 2;
-    order: 2; }
+    box-flex: 4;
+    -webkit-flex: 4;
+    -moz-flex: 4;
+    -ms-flex: 4;
+    flex: 4; }
   form .github-url {
-    font-size: 2em; }
+    font-size: 2em;
+    text-align: center; }
   form .slash {
-    -webkit-flex: 1 10px;
-    -ms-flex: 1 10px;
-    flex: 1 10px;
+    box-flex: 1;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
     font-size: 2em;
     color: #A4A4A4;
     text-align: center; }
@@ -5795,24 +5822,123 @@ form {
   form .btn {
     padding: 10px;
     border-radius: 0;
-    height: 42px; }
+    height: 42px;
+    display: table;
+    position: relative;
+    margin: auto;
+    width: 100%; }
 
 .examples {
   padding: 20px;
-  display: -ms-flexbox;
+  box-align: stretch;
+  -webkit-align-items: stretch;
+  -moz-align-items: stretch;
+  -ms-align-items: stretch;
+  -o-align-items: stretch;
+  align-items: stretch;
+  -ms-flex-align: stretch;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
   display: -webkit-flex;
-  display: flex; }
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-orient: horizontal;
+  box-direction: normal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  box-pack: start;
+  -webkit-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  -o-justify-content: flex-start;
+  justify-content: flex-start;
+  -ms-flex-pack: start; }
   .examples div {
     padding: 5px;
-    -webkit-flex: 2 200px;
-    -ms-flex: 2 200px;
-    flex: 2 200px;
-    -ms-flex-order: 2;
-    -webkit-order: 2;
-    order: 2; }
+    box-flex: 2;
+    -webkit-flex: 2;
+    -moz-flex: 2;
+    -ms-flex: 2;
+    flex: 2; }
     .examples div img {
       display: table;
       position: relative;
       margin: 0 auto 10px auto; }
+
+@media (max-width: 767px) {
+  form {
+    box-align: stretch;
+    -webkit-align-items: stretch;
+    -moz-align-items: stretch;
+    -ms-align-items: stretch;
+    -o-align-items: stretch;
+    align-items: stretch;
+    -ms-flex-align: stretch;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    box-orient: vertical;
+    box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    box-pack: start;
+    -webkit-justify-content: flex-start;
+    -moz-justify-content: flex-start;
+    -ms-justify-content: flex-start;
+    -o-justify-content: flex-start;
+    justify-content: flex-start;
+    -ms-flex-pack: start; }
+    form div {
+      box-flex: 4;
+      -webkit-flex: 4;
+      -moz-flex: 4;
+      -ms-flex: 4;
+      flex: 4; }
+    form .slash {
+      display: none; }
+  .examples {
+    box-align: stretch;
+    -webkit-align-items: stretch;
+    -moz-align-items: stretch;
+    -ms-align-items: stretch;
+    -o-align-items: stretch;
+    align-items: stretch;
+    -ms-flex-align: stretch;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    box-orient: vertical;
+    box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    box-pack: start;
+    -webkit-justify-content: flex-start;
+    -moz-justify-content: flex-start;
+    -ms-justify-content: flex-start;
+    -o-justify-content: flex-start;
+    justify-content: flex-start;
+    -ms-flex-pack: start; }
+    .examples div {
+      box-flex: 2;
+      -webkit-flex: 2;
+      -moz-flex: 2;
+      -ms-flex: 2;
+      flex: 2; } }
 
 /*# sourceMappingURL=app.css.map */

@@ -12,6 +12,7 @@ use App\RepoRank\Badge;
 class RepoController extends Controller
 {
   public function rank(Request $request, GitHub $github, Repo $repoDB, Badge $badge){
+    \DB::beginTransaction();
     $username = $request->username;
     $name     = $request->name;
     $style    = $this->normalizeStyle($request->input('style', 'default'));
