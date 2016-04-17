@@ -20,7 +20,7 @@
                     <input type="text" class="form-control" name="r" placeholder="repository" value="{{$repository}}" />
                 </div>
                 <div>
-                    <input type="submit" class="btn btn-success" value="Generate Code"/>
+                    <input type="submit" class="btn btn-success" value="Generate Markdown"/>
                 </div>
             </form>
             @if(strlen($username) > 0 && strlen($repository) > 0)
@@ -42,6 +42,7 @@
                         <textarea class="form-control" rows="4">[![GitHub Rank](https://reporank.com/{{$username}}/{{$repository}}?style=social)](https://reporank.com?u={{$username}}&r={{$repository}})</textarea>
                     </div>
                 </div>
+                <div class="text-center text-muted">copy and paste into your GitHub readme to display the repo rank badge</div>
             @endif
         </header>
         <hr />
