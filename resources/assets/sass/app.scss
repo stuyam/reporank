@@ -1,2 +1,100 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
+}
+
+// .wrapper {
+//   @include flexbox();
+// }
+
+// .item {
+//   @include flex(1 200px);
+//   @include order(2);
+//   background: pink;
+//   height:150px;
+//   margin:10px;
+//   padding:25px;
+//   text-align: center;
+// }
+
+html, body {
+  height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: table;
+    font-weight: 400;
+    font-family: 'Lato';
+}
+
+h1{
+  font-size: 4em;
+  margin-bottom: 20px;
+}
+
+.form-control{
+  padding: 20px;
+  box-shadow: inset none !important, none !important;
+  border-radius: 0;
+}
+
+form{
+  padding:20px;
+  @include flexbox();
+  div{
+    @include flex(2 200px);
+    @include order(2);
+  }
+  .github-url{
+    font-size: 2em;
+  }
+  .slash{
+    @include flex(1 10px);
+    font-size: 2em;
+    color: #A4A4A4;
+    text-align: center
+  }
+  input[type="text"]{
+    height: 42px;
+  }
+  .btn{
+    padding:10px;
+    border-radius: 0;
+    height: 42px;
+  }
+}
+
+.examples{
+  padding:20px;
+  @include flexbox();
+  img{
+    @include flex(2 200px);
+    @include order(2);
+  }
+}
+
 
