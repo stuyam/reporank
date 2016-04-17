@@ -13,7 +13,5 @@
 
 Route::group(['middleware' => ['web']], function () {
     Route::get('{username}/{name}', 'RepoController@rank');
-    Route::get('/', function () {
-        return view('welcome');
-    });
+    Route::get('/', 'WelcomeController@index');
 });
