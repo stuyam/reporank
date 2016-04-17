@@ -33,6 +33,25 @@
                 <textarea class="form-control">[![GitHub Rank](https://reporank.com/{{$username}}/{{$repository}})](https://reporank.com?u={{$username}}&r={{$repository}})</textarea>
             @endif
         </header>
+        <hr />
+        <div class="container">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Rank</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($all as $repo)
+                        <tr>
+                            <td><a href="https://github.com/{{$repo->username}}/{{$repo->name}}" target="new">{{$repo->username}}/{{$repo->name}}</a></td>
+                            <td>{{$repo->rank}}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
 
         <script>
             window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
