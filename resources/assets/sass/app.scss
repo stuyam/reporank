@@ -43,7 +43,6 @@ h1{
 }
 
 .form-control{
-  padding: 20px;
   box-shadow: inset none !important, none !important;
   border-radius: 0;
 }
@@ -66,6 +65,7 @@ form{
   }
   input[type="text"]{
     height: 42px;
+    padding: 20px;
   }
   .btn{
     padding:10px;
@@ -77,9 +77,15 @@ form{
 .examples{
   padding:20px;
   @include flexbox();
-  img{
+  div{
+    padding: 5px;
     @include flex(2 200px);
     @include order(2);
+    img{
+      display: table;
+      position: relative;
+      margin: 0 auto 10px auto;
+    }
   }
 }
 

@@ -25,12 +25,23 @@
             </form>
             @if(strlen($username) > 0 && strlen($repository) > 0)
                 <div class="examples">
-                    <img src="https://reporank.com/{{$username}}/{{$repository}}" >
-                    <img src="https://reporank.com/{{$username}}/{{$repository}}?style=square" >
-                    <img src="https://reporank.com/{{$username}}/{{$repository}}?style=plastic" >
-                    <img src="https://reporank.com/{{$username}}/{{$repository}}?style=social" >
+                    <div>
+                        <img src="https://reporank.com/{{$username}}/{{$repository}}">
+                        <textarea class="form-control" rows="4">[![GitHub Rank](https://reporank.com/{{$username}}/{{$repository}})](https://reporank.com?u={{$username}}&r={{$repository}})</textarea>
+                    </div>
+                    <div>
+                        <img src="https://reporank.com/{{$username}}/{{$repository}}?style=square">
+                        <textarea class="form-control" rows="4">[![GitHub Rank](https://reporank.com/{{$username}}/{{$repository}}?style=square)](https://reporank.com?u={{$username}}&r={{$repository}})</textarea>
+                    </div>
+                    <div>
+                        <img src="https://reporank.com/{{$username}}/{{$repository}}?style=plastic">
+                        <textarea class="form-control" rows="4">[![GitHub Rank](https://reporank.com/{{$username}}/{{$repository}}?style=plastic)](https://reporank.com?u={{$username}}&r={{$repository}})</textarea>
+                    </div>
+                    <div>
+                        <img src="https://reporank.com/{{$username}}/{{$repository}}?style=social">
+                        <textarea class="form-control" rows="4">[![GitHub Rank](https://reporank.com/{{$username}}/{{$repository}}?style=social)](https://reporank.com?u={{$username}}&r={{$repository}})</textarea>
+                    </div>
                 </div>
-                <textarea class="form-control">[![GitHub Rank](https://reporank.com/{{$username}}/{{$repository}})](https://reporank.com?u={{$username}}&r={{$repository}})</textarea>
             @endif
         </header>
         <hr />
@@ -46,7 +57,7 @@
                     @foreach($all as $repo)
                         <tr>
                             <td><a href="https://github.com/{{$repo->username}}/{{$repo->name}}" target="new">{{$repo->username}}/{{$repo->name}}</a></td>
-                            <td>{{$repo->rank}}</td>
+                            <td>{{numberReadable($repo->rank)}}</td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -59,6 +70,7 @@
         </script>
         <script src="https://www.google-analytics.com/analytics.js" async defer></script>
         <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
         <script type="text/javascript">
           $(function() {
             $("textarea").focus(function() { $(this).select(); } );

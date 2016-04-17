@@ -5765,7 +5765,6 @@ h1 {
   margin-bottom: 20px; }
 
 .form-control {
-  padding: 20px;
   box-shadow: inset none !important, none !important;
   border-radius: 0; }
 
@@ -5791,7 +5790,8 @@ form {
     color: #A4A4A4;
     text-align: center; }
   form input[type="text"] {
-    height: 42px; }
+    height: 42px;
+    padding: 20px; }
   form .btn {
     padding: 10px;
     border-radius: 0;
@@ -5802,12 +5802,17 @@ form {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex; }
-  .examples img {
+  .examples div {
+    padding: 5px;
     -webkit-flex: 2 200px;
     -ms-flex: 2 200px;
     flex: 2 200px;
     -ms-flex-order: 2;
     -webkit-order: 2;
     order: 2; }
+    .examples div img {
+      display: table;
+      position: relative;
+      margin: 0 auto 10px auto; }
 
 /*# sourceMappingURL=app.css.map */
