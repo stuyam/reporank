@@ -64,7 +64,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="text-center text-muted">Made with &lt;3 by <a href="http://stuyam.com">Stuart Yamartino</a></div>
+        <div class="text-center text-muted" style="margin-bottom: 20px;">Made with &lt;3 by <a href="http://stuyam.com">Stuart Yamartino</a></div>
 
         <script>
             window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
